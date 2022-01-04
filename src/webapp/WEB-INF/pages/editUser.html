@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<div>
+    <h2>Edit user</h2>
+    <form action="/spring_mvc_war_exploded/editUser" method="post">
+        <table>
+            <tr>
+                <td>id:</td>
+                <td><input type="number" th:field="*{user.id}" readonly/></td>
+            </tr>
+            <tr>
+                <td>name:</td>
+                <td><input type="text" th:field="*{user.firstName}"/></td>
+            </tr>
+            <tr>
+                <td>surName:</td>
+                <td><input type="text" th:field="*{user.lastName}"/></td>
+            </tr>
+
+            <tr>
+                <td>email:</td>
+                <td><input type="text" th:field="*{user.email}"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Edit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

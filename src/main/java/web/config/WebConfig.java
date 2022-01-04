@@ -31,7 +31,6 @@ public class WebConfig implements WebMvcConfigurer {
         templateResolver.setSuffix(".html");
         return templateResolver;
     }
-
     @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
