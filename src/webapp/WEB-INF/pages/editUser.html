@@ -8,7 +8,7 @@
 <body>
 <div>
     <h2>Edit user</h2>
-    <form action="/spring_mvc_war_exploded/editUser" method="post">
+    <form action="/admin/editUser" method="post">
         <table>
             <tr>
                 <td>id:</td>
@@ -28,10 +28,17 @@
                 <td><input type="text" th:field="*{user.email}"/></td>
             </tr>
             <tr>
+                <td>password:</td>
+                <td><input type="text" th:field="*{user.password}"/></td>
+            </tr>
+            <input type="checkbox" name="roles" value="ROLE_USER"/>USER
+            <input type="checkbox" name="roles" value="ROLE_ADMIN"/>ADMIN
+            <tr>
                 <td colspan="2"><input type="submit" value="Edit"></td>
             </tr>
         </table>
     </form>
+    <a th:href="@{/logout}">LOGOUT</a>
 </div>
 
 </body>

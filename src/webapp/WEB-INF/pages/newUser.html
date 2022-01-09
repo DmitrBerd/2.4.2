@@ -8,7 +8,7 @@
 <body>
 <div>
     <h2>New user</h2>
-    <form action="/spring_mvc_war_exploded/users/newUser/add" method="post">
+    <form action="/admin/newUser/add" method="post">
         <table>
             <tr>
                 <td>name:</td>
@@ -23,9 +23,17 @@
                 <td><input name="email"/></td>
             </tr>
             <tr>
+                <td>password:</td>
+                <td><input name="password"/></td>
+            </tr>
+            <tr>
                 <td colspan="2"><input type="submit" value="Add"></td>
             </tr>
+            <input type="checkbox" name="roles" value="ROLE_USER"/>USER
+            <input type="checkbox" name="roles" value="ROLE_ADMIN"/>ADMIN
+            <br/>
         </table>
+        <a th:href="@{/logout}">LOGOUT</a>
     </form>
 </div>
 </body>

@@ -9,7 +9,7 @@
 <div th:align="center" class="tg">
     <h2>USERS</h2>
     <br/>
-    <h3><a href="/spring_mvc_war_exploded/users/newUser">Add new User</a></h3>
+    <h3><a href="/admin/newUser">Add new User</a></h3>
     <br/>
     <table>
         <tr>
@@ -25,9 +25,10 @@
             <td th:text="${user.firstName}">name</td>
             <td th:text="${user.lastName}">lastName</td>
             <td th:text="${user.email}">email</td>
-            <td><a th:href="@{/editUser/{id}(id=${user.id})}">Edit</a></td>
-            <td><a th:href="@{/remove/{id}(id=${user.id})}">Delete</a></td>
+            <td><a th:href="@{/admin/editUser/{id}(id=${user.id})}">Edit</a></td>
+            <td><a th:href="@{/admin/remove/{id}(id=${user.id})}">Delete</a></td>
         </tr>
+        <a th:href="@{/logout}">logout</a>
     </table>
 </div>
 
