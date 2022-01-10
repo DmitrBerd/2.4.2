@@ -46,10 +46,10 @@ public class UserController {
         return "newUser";
     }
 
-    @PostMapping("/admin/newUser/add")
-    public String addUser(@ModelAttribute User user, @RequestParam(value = "roles") String[] roles) {
+    @PostMapping("/admin/add")
+    public String addUser(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<Role>();
-        for (String role : roles) {
+        for (String role : checkBoxRoles) {
             roleSet.add(roleService.getRole(role));
         }
         user.setRoles(roleSet);
@@ -65,9 +65,9 @@ public class UserController {
     }
 
     @PostMapping("/admin/editUser")
-    public String editUser(@ModelAttribute User user, @RequestParam(value = "roles") String[] roles) {
+    public String editUser(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<Role>();
-        for (String role : roles) {
+        for (String role : checkBoxRoles) {
             roleSet.add(roleService.getRole(role));
         }
         user.setRoles(roleSet);
@@ -78,7 +78,7 @@ public class UserController {
     @GetMapping("/admin/remove/{id}")
     public String removeUser(@PathVariable("id") long id) {
         userService.remove(id);
-        return "admin";
+        return "redirect:/admin";
     }
 
 }

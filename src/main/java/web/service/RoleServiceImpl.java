@@ -14,10 +14,9 @@ public class RoleServiceImpl implements RoleService {
     private RoleDao roleDao;
 
     @Autowired
-    public RoleServiceImpl(RoleDao roleDao) {
+    public void setRoleDao(RoleDao roleDao) {
         this.roleDao = roleDao;
     }
-
 
     @Override
     public List<Role> getAllRoles() {
